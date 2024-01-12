@@ -20,7 +20,7 @@ public class LibraryEventConsumer {
     @KafkaListener(topics = {"library-events"})
     public void onMessage(ConsumerRecord<Integer, String> consumerRecord) throws JsonProcessingException {
         log.info("Consumer Record : {}", consumerRecord);
-        log.info(("New record"));
+        log.info("New record");
         libraryEventService.processLibraryEvent(consumerRecord);
     }
 }
