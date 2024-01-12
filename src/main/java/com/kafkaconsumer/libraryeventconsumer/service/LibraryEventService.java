@@ -25,6 +25,7 @@ public class LibraryEventService {
        LibraryEvent libraryEvent = objectMapper.readValue(consumerRecord.value(), LibraryEvent.class);
        log.info("libraryEvent :{}", libraryEvent);
        log.info("libraryEvent");
+       log.info("consumer-record");
 
         if(libraryEvent.getLibraryEventId()!=null && (libraryEvent.getLibraryEventId()==999)){
             throw new RecoverableDataAccessException("Temporary Network Issue");
