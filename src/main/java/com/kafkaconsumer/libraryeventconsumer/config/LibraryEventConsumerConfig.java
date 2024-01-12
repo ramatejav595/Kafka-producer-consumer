@@ -57,7 +57,7 @@ public class LibraryEventConsumerConfig {
     public DefaultErrorHandler errorHandler() {
 
         var exceptions = List.of(IllegalStateException.class);
-        var fixedBackOff = new FixedBackOff(1000L, 2);
+        var fixedBackOff = new FixedBackOff(1000L, 4);
 
         var defaultErrorHandler = new DefaultErrorHandler(consumerRecordRecoverer, fixedBackOff);
 
